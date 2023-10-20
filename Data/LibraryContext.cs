@@ -23,4 +23,4 @@ namespace Batranu_Alexandru_Lab2.Data
 
     }
 }
-    `
+    
