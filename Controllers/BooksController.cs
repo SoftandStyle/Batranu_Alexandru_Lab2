@@ -19,11 +19,13 @@ namespace Batranu_Alexandru_Lab2.Controllers
             _context = context;
         }
 
+
+
         // GET: Books
         public async Task<IActionResult> Index()
         {
-              return _context.Books != null ? 
-                          View(await _context.Books.ToListAsync()) :
+            return _context.Books != null ?
+                        View(await _context.Books.Include(i => i.Author).ToListAsync()) :
                           Problem("Entity set 'LibraryContext.Books'  is null.");
         }
 
@@ -48,6 +50,7 @@ namespace Batranu_Alexandru_Lab2.Controllers
         // GET: Books/Create
         public IActionResult Create()
         {
+            ViewData["AuthorID"] = new SelectList(_context.Authors,"ID","FirstName");
             return View();
         }
 

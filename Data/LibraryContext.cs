@@ -12,6 +12,7 @@ namespace Batranu_Alexandru_Lab2.Data
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Book> Books { get; set; }
+        public DbSet<Author> Authors { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -21,6 +22,8 @@ namespace Batranu_Alexandru_Lab2.Data
             modelBuilder.Entity<Author>().ToTable("Author");
         }
 
+       
+        
     }
 }
     
