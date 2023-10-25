@@ -16,7 +16,11 @@ namespace Batranu_Alexandru_Lab2.Models
         public Author? Author { get; set; }
 
         public ICollection<Order>? Orders { get; set;}
-        
+
+        internal static IQueryable<Book> OrderByDescending(Func<object, object> value)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 
