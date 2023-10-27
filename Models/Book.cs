@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Batranu_Alexandru_Lab2.Models
 {
@@ -9,6 +10,8 @@ namespace Batranu_Alexandru_Lab2.Models
     {
         public int ID { get; set; }
         public string Title { get; set; }
+
+            [Column(TypeName = "decimal(6, 2)")]
        
         public decimal Price { get; set; }
 
@@ -16,6 +19,7 @@ namespace Batranu_Alexandru_Lab2.Models
         public Author? Author { get; set; }
 
         public ICollection<Order>? Orders { get; set;}
+        public ICollection<PublishedBook> PublishedBooks { get; set; }
 
         internal static IQueryable<Book> OrderByDescending(Func<object, object> value)
         {

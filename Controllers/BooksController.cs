@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Batranu_Alexandru_Lab2.Data;
 using Batranu_Alexandru_Lab2.Models;
+using Batranu_Alexandru_Lab2.Models.LibraryViewModels;
 
 namespace Batranu_Alexandru_Lab2.Controllers
 {
@@ -232,5 +233,10 @@ namespace Batranu_Alexandru_Lab2.Controllers
             {
                 return (_context.Books?.Any(e => e.ID == id)).GetValueOrDefault();
             }
-        }
+
+
+
+
+
     }
+}
